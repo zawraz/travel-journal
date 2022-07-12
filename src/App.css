@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #F55A5A;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Cards {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  width: 90%;
+}
+
+.Card {
+  display: grid;
+  grid-template-columns: 35% 25% auto;
+  grid-column-gap: 1em;
+  grid-template-areas:
+  "img location link"
+  "img title title"
+  "img duration duration"
+  "img desc desc";
+
+  padding: 1em;
+  border-bottom: 0.25em solid lightgray;
+
+  text-align: left;
+}
+
+.Card--img {
+  grid-area: img;
+
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  border-radius: 0.25em;
+}
+
+.Card--location {
+  grid-area: location;
+}
+
+.Card--googleMapsUrl {
+  grid-area: link;
+}
+
+.Card--location,
+.Card--googleMapsUrl {
+  line-height: 1rem;  
+  font-size: 1rem; 
+  padding-top: calc((1rem - 1ex) / 1);
+  align-self: center;
+}
+
+.Card--title {
+  grid-area: title;
+  margin: 0;
+}
+
+.Card--duration {
+  grid-area: duration;
+  margin-top: 0.5em;
+
+  font-style: italic;
+}
+
+.Card--desc {
+  grid-area: desc;
+}
